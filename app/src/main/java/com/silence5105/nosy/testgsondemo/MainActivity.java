@@ -18,14 +18,13 @@ import org.json.JSONObject;
 import android.support.v7.widget.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     AQuery aQuery;
     Context context;
     MyAdapter myAdapter;
     RecyclerView recyclerView;
-    ArrayList<CardViewAdapter> cardViewAdapters = new ArrayList<CardViewAdapter>();
+    ArrayList<CardViewItem> cardViewItems = new ArrayList<CardViewItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 //
-        myAdapter = new MyAdapter(this, cardViewAdapters);
+        myAdapter = new MyAdapter(this, cardViewItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("====" + img);
                     for (int i = 0; i < object.getJSONArray("list").length(); i++) {
 //
-                        cardViewAdapters.add(new CardViewAdapter(object.getJSONArray("list").getJSONObject(i)));
+                        cardViewItems.add(new CardViewItem(object.getJSONArray("list").getJSONObject(i)));
 
                     }
 

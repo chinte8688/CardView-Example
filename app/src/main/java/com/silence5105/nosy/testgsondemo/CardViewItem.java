@@ -6,12 +6,12 @@ import org.json.JSONObject;
 /**
  * Created by Nosy on 2015/10/16.
  */
-public class CardViewAdapter {
+public class CardViewItem {
    public String img;
    public String title;
    public String info;
 
-//    public CardViewAdapter(JSONObject list) {
+//    public CardViewItem(JSONObject list) {
 //
 //        try {
 //            this.img = list.getString("img");
@@ -20,7 +20,7 @@ public class CardViewAdapter {
 //        }
 //    }
 
-    public CardViewAdapter(JSONObject list) {
+    public CardViewItem(JSONObject list) {
         this.title = title;
         this.info = info;
         this.img = img;
@@ -34,7 +34,7 @@ public class CardViewAdapter {
     }
 
 
-//    public CardViewAdapter(JSONObject list) {
+//    public CardViewItem(JSONObject list) {
 //        try {
 ////            this.url=list.getString("CouponBannerSrc");
 //            this.title = list.getString("title");

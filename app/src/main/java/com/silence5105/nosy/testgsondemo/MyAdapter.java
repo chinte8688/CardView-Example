@@ -2,29 +2,26 @@ package com.silence5105.nosy.testgsondemo;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.loopj.android.image.SmartImageView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Nosy on 2015/10/15.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Context context;
-    ArrayList<CardViewAdapter> cardViewAdapters;
+    ArrayList<CardViewItem> cardViewItems;
     Bitmap bitmap;
-    public MyAdapter(Context context, ArrayList<CardViewAdapter> cardViewAdapters){
+    public MyAdapter(Context context, ArrayList<CardViewItem> cardViewItems){
         this.context = context;
-        this.cardViewAdapters = cardViewAdapters;
+        this.cardViewItems = cardViewItems;
     }
 
     @Override
@@ -35,17 +32,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        CardViewAdapter cardViewAdapter = cardViewAdapters.get(position);
-        holder.title.setText(cardViewAdapter.getTitle());
-        holder.info.setText(cardViewAdapter.getInfo());
-        holder.img.setImageUrl(cardViewAdapter.getImg());
+        CardViewItem cardViewItem = cardViewItems.get(position);
+        holder.title.setText(cardViewItem.getTitle());
+        holder.info.setText(cardViewItem.getInfo());
+        holder.img.setImageUrl(cardViewItem.getImg());
 //
 
     }
 
     @Override
     public int getItemCount() {
-        return cardViewAdapters.size();
+        return cardViewItems.size();
     }
 
     public static class ViewHolder
