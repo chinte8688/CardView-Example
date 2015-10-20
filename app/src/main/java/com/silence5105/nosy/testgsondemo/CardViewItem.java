@@ -11,19 +11,7 @@ public class CardViewItem {
    public String title;
    public String info;
 
-//    public CardViewItem(JSONObject list) {
-//
-//        try {
-//            this.img = list.getString("img");
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public CardViewItem(JSONObject list) {
-        this.title = title;
-        this.info = info;
-        this.img = img;
         try {
             this.title = list.getString("subject");
             this.info = list.getString("info");
@@ -32,18 +20,6 @@ public class CardViewItem {
             e.printStackTrace();
         }
     }
-
-
-//    public CardViewItem(JSONObject list) {
-//        try {
-////            this.url=list.getString("CouponBannerSrc");
-//            this.title = list.getString("title");
-//            this.info = list.getString("info");
-//            this.img = list.getString("img");
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public String getTitle() {
         return title;

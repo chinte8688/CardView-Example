@@ -12,6 +12,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -42,17 +43,7 @@ public class MainActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(this, cardViewItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-
-
-//        Gson gson = new Gson();
-
-//        String url = "http://hashtag.fofo.tw/api/get_tags_info_list?hashtag_sn=12223323";
         String url = "http://eatwhere.ladesign.tw/api/get_food_list";
-//        String url = "http://babysmile2015.cetaphil.com.tw/api/get_list";
-
-//        gson.fromJson(url,null);
-//        System.out.println("===="+gson);
 
         aQuery.ajax(url, null, JSONObject.class, new AjaxCallback<JSONObject>() {
             @Override

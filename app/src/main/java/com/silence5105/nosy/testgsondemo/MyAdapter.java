@@ -18,24 +18,23 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Context context;
     ArrayList<CardViewItem> cardViewItems;
-    Bitmap bitmap;
-    public MyAdapter(Context context, ArrayList<CardViewItem> cardViewItems){
+
+    public MyAdapter(Context context, ArrayList<CardViewItem> cardViewItems) {
         this.context = context;
         this.cardViewItems = cardViewItems;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        CardViewItem cardViewItem = cardViewItems.get(position);
-        holder.title.setText(cardViewItem.getTitle());
-        holder.info.setText(cardViewItem.getInfo());
-        holder.img.setImageUrl(cardViewItem.getImg());
+        holder.title.setText(cardViewItems.get(position).getTitle());
+        holder.info.setText(cardViewItems.get(position).getInfo());
+        holder.img.setImageUrl(cardViewItems.get(position).getImg());
 //
 
     }
@@ -46,16 +45,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public static class ViewHolder
-            extends RecyclerView.ViewHolder
-    {
-        public TextView title ;
+            extends RecyclerView.ViewHolder {
+        public TextView title;
 
         public SmartImageView img;
 
         public TextView info;
 
-        public ViewHolder( View v )
-        {
+        public ViewHolder(View v) {
             super(v);
             title = (TextView) v.findViewById(R.id.textView);
             img = (SmartImageView) v.findViewById(R.id.imageView);

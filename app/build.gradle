@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        testkey {
+            keyAlias 'silence5105'
+            keyPassword 'j61i6jo3'
+            storeFile file('C:/Users/Nosy/Documents/MyApplication/test.jks')
+            storePassword 'j61i6jo3'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "com.silence5105.nosy.testgsondemo"
         minSdkVersion 15
@@ -15,6 +22,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.testkey
         }
     }
 }
